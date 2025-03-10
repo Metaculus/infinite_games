@@ -46,7 +46,7 @@
     "unixepoch",
     "vali"
   ],
-  "python.languageServer": "Pylance",
+  "python.languageServer": "Default",
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
 }
