@@ -35,6 +35,7 @@ class MetaculusMiner(BaseForecaster):
         )
 
     async def _run(self) -> float | int:
+        self.logger.info(f"Forecasting question: {self.event.get_description()}")
         question = BinaryQuestion(
             question_text=self.event.get_description(),
             background_info=None,
