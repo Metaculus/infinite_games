@@ -17,7 +17,7 @@ sys.path.append(parent_dir)
 import time
 
 from bittensor import logging
-from forecasting_tools import BinaryQuestion, MainBot, QuestionState
+from forecasting_tools import BinaryQuestion, MainBot, QuestionState, Q2TemplateBot2025, GeneralLlm
 
 from neurons.miner.forecasters.base import BaseForecaster, DummyForecaster
 from neurons.miner.forecasters.llm_forecaster import LLMForecaster
@@ -29,7 +29,13 @@ from neurons.validator.utils.logger.logger import InfiniteGamesLogger, miner_log
 class MetaculusMiner(BaseForecaster):
     def __init__(self, event: MinerEvent, logger: InfiniteGamesLogger, extremize: bool = False):
         super().__init__(event, logger, extremize)
-        self.bot = MainBot(
+        self.bot = Q2TemplateBot2025(
+            llms={
+                "default": GeneralLlm(
+                    model="o1",
+                    temperature=0.3,
+                )
+            },
             research_reports_per_question=1,
             predictions_per_research_report=5,
         )

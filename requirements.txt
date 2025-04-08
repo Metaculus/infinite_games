@@ -8,7 +8,7 @@ backoff==2.2.1
 bittensor-cli==9.1.1
 bittensor==9.0.4
 fastapi==0.110.3
-forecasting-tools>=0.2.17
+forecasting-tools>=0.2.26
 generativeai==0.0.1
 gnews==0.3.7
 google-generativeai==0.7.2
