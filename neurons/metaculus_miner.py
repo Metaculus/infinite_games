@@ -32,7 +32,7 @@ class MetaculusMiner(BaseForecaster):
         self.bot = Q2TemplateBot2025(
             llms={
                 "default": GeneralLlm(
-                    model="o1",
+                    model="openrouter/deepseek/deepseek-r1",
                     temperature=0.3,
                 )
             },
